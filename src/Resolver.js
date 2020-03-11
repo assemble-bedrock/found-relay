@@ -75,6 +75,7 @@ export default class Resolver {
         routeMatches,
         earlyComponents,
         querySubscriptions,
+        routeVariables,
         false,
       );
 
@@ -160,7 +161,13 @@ export default class Resolver {
     return querySubscriptions;
   }
 
-  createElements(routeMatches, Components, querySubscriptions, routeVariables, fetched) {
+  createElements(
+    routeMatches,
+    Components,
+    querySubscriptions,
+    routeVariables,
+    fetched,
+  ) {
     return routeMatches.map((match, i) => {
       const { route, router } = match;
 
